@@ -8,6 +8,7 @@ import Create from "./Components/Create";
 import Dashboard from './Components/Dashboard/Dashboard';
 import MyPets from "./Components/MyPets";
 import Details from './Components/Details';
+import Edit from './Components/Edit';
 
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
             <Route path='/logout' element={<Navigate to="/dashboard" />} />
             <Route path='/register' element={<Register />} />
             <Route path='/create' element={<Create />} />
-            <Route path='/dashboard/*' element={<Dashboard />} />
+            <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/my-pets' element={<MyPets />} />
             <Route path='/dashboard/:id' element={<Details/>} />
+            <Route path='/edit/:id' element={<Edit/>}/>
           </Routes>
         </main>
 
