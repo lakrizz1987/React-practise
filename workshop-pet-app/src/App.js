@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Create from "./Components/Create";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from './Components/Dashboard/Dashboard';
 import MyPets from "./Components/MyPets";
 
 
