@@ -12,7 +12,7 @@ export default function Edit(){
             .then(data => setPet(data))
 
     }, [])
-    
+
     return(
         <section id="edit-page" className="edit">
         <form id="edit-form" action="#" method="">
@@ -42,7 +42,7 @@ export default function Edit(){
                     <span className="input">
                         <select id="type" name="type" defaultValue={pet.type}>
                             <option value="cat">Cat</option>
-                            <option value="dog" selected>Dog</option>
+                            <option value="dog" >Dog</option>
                             <option value="parrot">Parrot</option>
                             <option value="reptile">Reptile</option>
                             <option value="other">Other</option>
