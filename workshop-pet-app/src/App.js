@@ -21,13 +21,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/logout' element={<Login />} />
+            <Route path='/logout' element={<Navigate to="/dashboard" />} />
             <Route path='/register' element={<Register />} />
             <Route path='/create' element={<Create />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/my-pets' element={<MyPets />} />
           </Routes>
-
         </main>
 
         <footer id="site-footer">
