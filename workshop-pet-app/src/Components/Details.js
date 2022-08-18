@@ -1,4 +1,10 @@
+import { useContext, useEffect } from "react"; 
+import {useParams} from 'react-router-dom'
+
 export default function Details(){
+    const match = useParams()
+    const id = match.id
+    
     return(
         <section id="details-page" className="details">
         <div className="pet-information">

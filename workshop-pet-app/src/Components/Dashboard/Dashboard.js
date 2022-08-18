@@ -19,7 +19,7 @@ export default function Dashboard() {
             <ul className="other-pets-list">
             {(pets.length > 0)
                 ?
-                pets.map(pet => <PetCard pet={pet} />)
+                pets.map(pet => <PetCard key={pet._id} pet={pet} />)
                 : 
                 <p className="no-pets">No pets in database!</p>
             }
