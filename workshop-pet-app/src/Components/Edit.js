@@ -21,35 +21,35 @@ export default function Edit(){
                 <p className="field">
                     <label htmlFor="name">Name</label>
                     <span className="input">
-                        <input type="text" name="name" id="name" value={pet.name}/>
+                        <input type="text" name="name" id="name" defaultValue={pet.name}/>
                     </span>
                 </p>
                 <p className="field">
                     <label htmlFor="description">Description</label>
                     <span className="input">
                         <textarea name="description" 
-                            id="description" defaultValue={'Today, some dogs are used as pets, others are used to help humans do their work. They are a popular pet because they are usually playful, friendly, loyal and listen to humans. Thirty million dogs in the United States are registered as pets.[5] Dogs eat both meat and vegetables, often mixed together and sold in stores as dog food. Dogs often have jobs, including as police dogs, army dogs, assistance dogs, fire dogs, messenger dogs, hunting dogs, herding dogs, or rescue dogs.'} />
+                            id="description" defaultValue='today, some dogs are used as pets, others are used to help humans do their work. They are a popular pet because they are usually playful, friendly, loyal and listen to humans. Thirty million dogs in the United States are registered as pets.[5] Dogs eat both meat and vegetables, often mixed together and sold in stores as dog food. Dogs often have jobs, including as police dogs, army dogs, assistance dogs, fire dogs, messenger dogs, hunting dogs, herding dogs, or rescue dogs.' />
                     </span>
                 </p>
                 <p className="field">
                     <label htmlFor="image">Image</label>
                     <span className="input">
-                        <input type="text" name="imageUrl" id="image" value={pet.img}/>
+                        <input type="text" name="imageUrl" id="image" defaultValue={pet.img}/>
                     </span>
                 </p>
                 <p className="field">
                     <label htmlFor="type">Type</label>
                     <span className="input">
                         <select id="type" name="type" defaultValue={pet.type}>
-                            <option value="cat">Cat</option>
-                            <option value="dog" >Dog</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="reptile">Reptile</option>
-                            <option value="other">Other</option>
+                            <option defaultValue="cat">Cat</option>
+                            <option defaultValue="dog" >Dog</option>
+                            <option defaultValue="parrot">Parrot</option>
+                            <option defaultValue="reptile">Reptile</option>
+                            <option defaultValue="other">Other</option>
                         </select>
                     </span>
                 </p>
-                <input className="button submit" type="submit" value="Save"/>
+                <input className="button submit" type="submit" defaultValue="Save"/>
             </fieldset>
         </form>
     </section>
