@@ -40,10 +40,10 @@ export default function Edit(){
                 <p className="field">
                     <label htmlFor="type">Type</label>
                     <span className="input">
-                        <select id="type" name="type" defaultValue={pet.type}>
+                        <select id="type" name="type" value={pet.type}>
                             <option defaultValue="cat">Cat</option>
                             <option defaultValue="dog" >Dog</option>
-                            <option defaultValue="parrot">Parrot</option>
+                            <option defaultValue="parrot" >Parrot</option>
                             <option defaultValue="reptile">Reptile</option>
                             <option defaultValue="other">Other</option>
                         </select>
