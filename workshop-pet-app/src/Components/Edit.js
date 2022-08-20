@@ -3,39 +3,40 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { getOne, updateOne } from "../services/services";
 
 export default function Edit() {
-    let [pet, setPet] = useState({})
+    const [pet, setPet] = useState({});
+    const navigate = useNavigate();
+    const match = useParams();
 
-    const match = useParams()
-    const id = match.id
+    const id = match.id;
 
     useEffect(() => {
         getOne(id)
             .then(data => setPet(data))
 
-    }, []);
+    }, [id]);
 
 
 
     async function submitHandler(e) {
         e.preventDefault();
+        
         let formData = new FormData(e.currentTarget);
 
         const { name, description, imageUrl, type } = Object.fromEntries(formData);
-        console.log(name, description, imageUrl, type);
 
         const data = await updateOne(id, JSON.stringify({ name, description, img: imageUrl, type, _id: id }));
         
-
-
-
-
+        navigate(`/dashboard/${id}`);
+        
     }
 
     function onChangeHandler(e) {
         const chekedOption = e.target.value;
-        const newArr = { ...pet };
-        newArr.type = chekedOption;
-        setPet(newArr);
+
+        const newPetArray = { ...pet };
+        newPetArray.type = chekedOption;
+
+        setPet(newPetArray);
     }
 
     return (
