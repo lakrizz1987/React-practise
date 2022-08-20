@@ -5,6 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+### `cd server/server` to move in server directory
+### `node server.js` to run the server
+
+Open new shell:
 
 ### `npm start`
 
