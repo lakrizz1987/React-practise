@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 export default function Header(){
     return (
@@ -19,5 +19,5 @@ export default function Header(){
                 </section>
             </nav>
         </header>
-    )
-}
+    );
+};

@@ -1,17 +1,17 @@
 import {  useEffect, useState } from "react";
-import { useParams,Link } from 'react-router-dom'
+import { useParams,Link } from 'react-router-dom';
 import { getOne } from "../services/services";
 
 export default function Details() {
-    const [pet, setPet] = useState({})
-    const match = useParams()
-    const id = match.id
+    const [pet, setPet] = useState({});
+    const match = useParams();
+    const id = match.id;
 
     useEffect(() => {
         getOne(id)
             .then(data => setPet(data))
 
-    }, [])
+    }, []);
 
     return (
         <section id="details-page" className="details">

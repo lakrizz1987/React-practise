@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom';
 import { getOne, updateOne } from "../services/services";
 
 export default function Edit() {
@@ -19,7 +19,7 @@ export default function Edit() {
 
     async function submitHandler(e) {
         e.preventDefault();
-        
+
         let formData = new FormData(e.currentTarget);
 
         const { name, description, imageUrl, type } = Object.fromEntries(formData);
@@ -79,5 +79,5 @@ export default function Edit() {
                 </fieldset>
             </form>
         </section>
-    )
-} 
+    );
+} ;

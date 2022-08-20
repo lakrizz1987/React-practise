@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 export default function PetCard({pet}){
     return(
@@ -8,5 +8,5 @@ export default function PetCard({pet}){
                 <p className="img"><img src={pet.img}/></p>
                 <Link className="button" to={pet._id}>Details</Link>
             </li>
-    )
-}
+    );
+};

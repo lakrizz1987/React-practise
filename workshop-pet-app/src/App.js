@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate, Navigate } from 'react-router-dom'
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 
 
 import Header from "./Components/Header";
@@ -13,34 +13,34 @@ import Edit from './Components/Edit';
 
 function App() {
 
-  return (
-    <div className="App">
-      <div id="container">
+    return (
+        <div className="App">
+            <div id="container">
 
-        <Header />
+                <Header />
 
-        <main id="site-content">
-          <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/logout' element={<Navigate to="/dashboard" />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/create' element={<Create />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/my-pets' element={<MyPets />} />
-            <Route path='/dashboard/:id' element={<Details/>} />
-            <Route path='/edit/:id' element={<Edit/>}/>
-          </Routes>
-        </main>
+                <main id="site-content">
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/dashboard" />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/logout' element={<Navigate to="/dashboard" />} />
+                        <Route path='/register' element={<Register />} />
+                        <Route path='/create' element={<Create />} />
+                        <Route path='/dashboard' element={<Dashboard />} />
+                        <Route path='/my-pets' element={<MyPets />} />
+                        <Route path='/dashboard/:id' element={<Details />} />
+                        <Route path='/edit/:id' element={<Edit />} />
+                    </Routes>
+                </main>
 
-        <footer id="site-footer">
-          <p>@PetMyPet</p>
-        </footer>
+                <footer id="site-footer">
+                    <p>@PetMyPet</p>
+                </footer>
 
-      </div>
+            </div>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
