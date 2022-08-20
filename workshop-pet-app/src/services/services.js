@@ -9,3 +9,13 @@ export const getOne = async (id) => {
     const data = await response.json();
     return data;
 }
+
+export const updateOne = (id, data) => {
+    return fetch(`${baseUrl}/pets/${id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: data
+    }).then(res => res.json());
+}

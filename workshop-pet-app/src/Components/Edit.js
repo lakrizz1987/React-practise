@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
-import { getOne } from "../services/services";
+import { useParams, useNavigate } from 'react-router-dom'
+import { getOne, updateOne } from "../services/services";
 
 export default function Edit() {
     let [pet, setPet] = useState({})
@@ -16,12 +16,19 @@ export default function Edit() {
 
 
 
-    function submitHandler(e) {
+    async function submitHandler(e) {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
 
         const { name, description, imageUrl, type } = Object.fromEntries(formData);
-        console.log(name, description, imageUrl, type)
+        console.log(name, description, imageUrl, type);
+
+        const data = await updateOne(id, JSON.stringify({ name, description, img: imageUrl, type, _id: id }));
+        
+
+
+
+
     }
 
     function onChangeHandler(e) {
