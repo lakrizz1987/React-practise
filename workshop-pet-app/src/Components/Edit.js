@@ -33,10 +33,12 @@ export default function Edit() {
     function onChangeHandler(e) {
         const chekedOption = e.target.value;
 
-        const newPetArray = { ...pet };
-        newPetArray.type = chekedOption;
-
-        setPet(newPetArray);
+        setPet(state => {
+            return {
+                ...state,
+                type:chekedOption
+            }
+        });
     }
 
     return (
