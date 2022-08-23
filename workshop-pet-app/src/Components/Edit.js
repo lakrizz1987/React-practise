@@ -28,7 +28,7 @@ export default function Edit() {
         
         navigate(`/dashboard/${id}`);
         
-    }
+    };
 
     function onChangeHandler(e) {
         const chekedOption = e.target.value;
