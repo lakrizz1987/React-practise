@@ -20,12 +20,22 @@ export const updateOne = (id, data) => {
     }).then(res => res.json());
 };
 
-export const loginService = async (email,password) =>{
-    const response = await fetch('http://localhost:3030/users/login',{
-        method: 'POST',
-        headers: {'content-type': 'application/json'},
-        body: JSON.stringify({email,password})
-    });
-    const data = await response.json();
-    return data;
+export const loginService = async (email, password) => {
+    try {
+        const response = await fetch('http://localhost:3030/users/login', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        if (response.ok === false) {
+            const resErr = await response.json()
+            throw new Error(resErr.message)
+        }
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        alert(err.message)
+    }
+
+
 }

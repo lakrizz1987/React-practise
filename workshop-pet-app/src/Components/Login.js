@@ -13,8 +13,14 @@ export default function Login(){
         const formData = new FormData(e.currentTarget);
         const {email,password} = Object.fromEntries(formData);
         const data = await loginService(email,password);
-        prop.login(data);
-        navigate('/');
+
+        if(data){
+            prop.login(data);
+            navigate('/');
+        }else{
+            e.target.reset();
+        }
+       
     };
 
 
