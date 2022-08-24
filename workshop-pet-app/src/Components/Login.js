@@ -1,16 +1,19 @@
 import { loginService } from "../services/services";
 import {useNavigate} from 'react-router-dom'
+import {  useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
 
-export default function Login({login}){
+export default function Login(){
     const navigate = useNavigate();
-
+    const prop = useContext(AuthContext);
+    
     async function loginHandler(e){
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const {email,password} = Object.fromEntries(formData);
         const data = await loginService(email,password);
-        login(data);
+        prop.login(data);
         navigate('/');
     };
 

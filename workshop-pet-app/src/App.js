@@ -20,10 +20,14 @@ function login(user){
     setUser(user);
 };
 
+const ctxProp = {
+    user,
+    login
+}
 
     return (
         <div className="App">
-            <AuthContext.Provider value={user}>
+            <AuthContext.Provider value={ctxProp}>
             <div id="container">
 
                 <Header />
@@ -31,7 +35,7 @@ function login(user){
                 <main id="site-content">
                     <Routes>
                         <Route path="/" element={<Navigate to="/dashboard" />} />
-                        <Route path='/login' element={<Login login={login} /> } />
+                        <Route path='/login' element={<Login /> } />
                         <Route path='/logout' element={<Navigate to="/dashboard" />} />
                         <Route path='/register' element={<Register />} />
                         <Route path='/create' element={<Create />} />

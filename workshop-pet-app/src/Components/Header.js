@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
 export default function Header() {
-    const user = useContext(AuthContext);
+    const prop = useContext(AuthContext);
     
     const guestView = (
         <div id="guest">
@@ -14,7 +14,7 @@ export default function Header() {
 
     const userView = (
         <div id="user">
-            <span>Welcome,{user.email}</span>
+            <span>Welcome,{prop.user.email}</span>
             <Link className="button" to="/my-pets">My Pets</Link>
             <Link className="button" to="/create">Add Pet</Link>
             <Link className="button" to="/logout">Logout</Link>
@@ -26,7 +26,7 @@ export default function Header() {
             <nav className="navbar">
                 <section className="navbar-dashboard">
                     <Link to="/dashboard">Dashboard</Link>
-                    {user ? userView : guestView}
+                    {prop.user ? userView : guestView}
                 </section>
             </nav>
         </header>
