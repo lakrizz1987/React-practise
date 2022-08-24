@@ -1,5 +1,6 @@
-import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
-
+import { Route, Routes, Navigate } from 'react-router-dom';
+import {useState} from 'react'
+import AuthContext from './contexts/AuthContext';
 
 import Header from "./Components/Header";
 import Login from "./Components/Login";
@@ -13,8 +14,16 @@ import Edit from './Components/Edit';
 
 function App() {
 
+const [user,setUser] = useState('');
+
+function login(user){
+    setUser(user);
+};
+
+
     return (
         <div className="App">
+            <AuthContext.Provider value={user}>
             <div id="container">
 
                 <Header />
@@ -22,7 +31,7 @@ function App() {
                 <main id="site-content">
                     <Routes>
                         <Route path="/" element={<Navigate to="/dashboard" />} />
-                        <Route path='/login' element={<Login />} />
+                        <Route path='/login' element={<Login login={login} /> } />
                         <Route path='/logout' element={<Navigate to="/dashboard" />} />
                         <Route path='/register' element={<Register />} />
                         <Route path='/create' element={<Create />} />
@@ -38,7 +47,7 @@ function App() {
                 </footer>
 
             </div>
-
+            </AuthContext.Provider>
         </div>
     );
 }
