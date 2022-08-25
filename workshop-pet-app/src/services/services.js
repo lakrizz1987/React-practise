@@ -1,5 +1,24 @@
 const baseUrl = 'http://localhost:3030/jsonstore';
 
+export const addPet = async () => {
+    try {
+        const response = await fetch(`${baseUrl}/pets`, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' }
+        });
+        if (response.ok === false) {
+            const errData = await response.json();
+            throw new Error(errData.message)
+        }
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        alert(err.message)
+    }
+
+    
+}
+
 export const getAll = () => {
     return fetch(`${baseUrl}/pets`).then(res => res.json());
 };

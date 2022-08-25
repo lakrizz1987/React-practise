@@ -1,7 +1,11 @@
 export default function Create(){
+    async function createHandler(e){
+        e.preventDefault();
+    }
+
     return(
         <section id="create-page" className="create">
-        <form id="create-form" action="" method="">
+        <form id="create-form" action="" method="" onSubmit={createHandler}>
             <fieldset>
                 <legend>Add new Pet</legend>
                 <p className="field">
