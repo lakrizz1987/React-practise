@@ -1,7 +1,30 @@
+import {useNavigate} from 'react-router-dom'
+import {useContext} from 'react'
+import AuthContext from '../contexts/AuthContext';
+import {registerService} from '../services/services'
+
 export default function Register(){
+    const navigate = useNavigate();
+    const prop = useContext(AuthContext);
+    
+    async function registerHandler(e){
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        const {email,password} = Object.fromEntries(formData);
+        const data = await registerService(email,password);
+
+        if(data){
+            prop.login(data);
+            navigate('/');
+        }else{
+            e.target.reset();
+        }
+    }  
+
     return(
         <section id="register-page" className="register">
-        <form id="register-form" action="" method="">
+        <form id="register-form" action="" method="" onSubmit={registerHandler}>
             <fieldset>
                 <legend>Register Form</legend>
                 <p className="field">

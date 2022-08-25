@@ -17,7 +17,7 @@ export const addPet = async (pet) => {
         alert(err.message)
     }
 
-    
+
 }
 
 export const getAll = () => {
@@ -58,4 +58,23 @@ export const loginService = async (email, password) => {
     }
 
 
+
+}
+
+export const registerService = async (email, password) => {
+    try {
+        const response = await fetch('http://localhost:3030/users/register', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        if (response.ok === false) {
+            const resErr = await response.json()
+            throw new Error(resErr.message)
+        }
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        alert(err.message)
+    }
 }

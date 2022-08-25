@@ -1,5 +1,5 @@
-import {  useEffect, useState } from "react";
-import { useParams,Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams, Link } from 'react-router-dom';
 import { getOne } from "../services/services";
 
 export default function Details() {
