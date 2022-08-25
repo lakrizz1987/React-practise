@@ -1,6 +1,15 @@
+import { addPet } from "../services/services";
+import {useNavigate} from 'react-router-dom';
+
 export default function Create(){
+    const navigate = useNavigate();
     async function createHandler(e){
         e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+
+        const {name,description,imageUrl,type} = Object.fromEntries(formData);
+        addPet({name,description,img:imageUrl,type});
+        navigate('/dashboard');
     }
 
     return(
