@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import {useState} from 'react'
+
 import AuthContext from './contexts/AuthContext';
+import useAuthHook from './hooks/useAuthHook';
 
 import Header from "./Components/Header";
 import Login from "./Components/Login";
@@ -11,10 +12,11 @@ import MyPets from "./Components/MyPets";
 import Details from './Components/Details';
 import Edit from './Components/Edit';
 
+const initialValue = '';
 
 function App() {
 
-const [user,setUser] = useState('');
+const [user,setUser] = useAuthHook('user',initialValue);
 
 function login(user){
     setUser(user);

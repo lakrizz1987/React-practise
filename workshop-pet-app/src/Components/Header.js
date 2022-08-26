@@ -17,9 +17,15 @@ export default function Header() {
             <span>Welcome,{prop.user.email}</span>
             <Link className="button" to="/my-pets">My Pets</Link>
             <Link className="button" to="/create">Add Pet</Link>
-            <Link className="button" to="/logout" onClick={() => prop.login('')}>Logout</Link>
+            <Link className="button" to="/logout" onClick={logoutHandler}>Logout</Link>
         </div>
     )
+
+    function logoutHandler(){
+        prop.login('');
+        localStorage.clear();
+        return null
+    }
 
     return (
         <header id="site-header">
