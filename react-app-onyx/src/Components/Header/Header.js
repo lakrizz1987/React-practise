@@ -1,23 +1,25 @@
 import logo from "../../images/logo.jpg";
 import { Link } from "react-router-dom";
-import "../Header/Header.css"
+import "../Header/Header.scss"
 
 export const Header = () => {
     return (
-        <div className="headerContainer">
-            <nav className="navigation">
-                <div className="logoContainer">
-                    <img src={logo} alt="logo"></img>
-                </div>
-                <div className="navLinks">
-                    <ul>
-                        <li><Link className='links' to="/">За нас</Link></li>
-                        <li><Link className='links' to="/galery">Галерия</Link></li>
-                        <li><Link className='links' to="/contacts">Контакти</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <section class="top-nav">
+    <div>
+      <img src={logo}></img>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+    </ul>
+  </section>
     )
 }
 
